@@ -152,4 +152,17 @@ button {
     align-items: center;
 }
 
+.footer {
+    position: absolute;
+    color: white;
+    top: 93%;
+    left: 15%;
+    transform: translate(-50%,-50%);
+    font-size: 12px;
+  }
 
+  a {
+    /* this removes the line under our links */
+    text-decoration: none;
+    color: white;
+}
