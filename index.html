@@ -13,9 +13,10 @@
 
             <div class="container">
 
+                <div class="empt" ></div>
                 <div class="imgs">               
-                    <img class="im1" src="odin-lined.png" alt="Odin img" height="110" width="110"> 
-                    <span class="logos">ODIN</span>  
+                    <img class="im1" src="odin-lined.png" alt="Odin img" height="100" width="65"> 
+                    <div class="logos">ODIN</div>  
                 </div>
 
             </div>
@@ -38,7 +39,7 @@
                         <strong>Let's do this!</strong>
                     </div>
                     <div class="acctForm">
-                        <form action="" method="post">
+                        <form id="signUpForm" action="#" method="post">
                             <div class="c1">
                                 <label for="firstName">FIRST NAME</label>
                                 <input type="text" id="firstName" name="First Name" placeholder="e.g. Lucy" required>
@@ -47,19 +48,19 @@
                                 <input type="email" id="email" name="Email" placeholder="e.g.fer@gmail.com" required>
                                 <p></p>
                                 <label for="password"> PASSWORD </label>
-                                <input type="password" id="password" name="Password" required>
+                                <input type="password" id="password" name="Password" onChange="onChange()" required>
 
                             </div>
 
                             <div class="c1">
                                 <label for="lastName">LAST NAME</label>
-                                <input type="text" id="lasttName" name="Last Name" placeholder="e.g. Daniels" required>
+                                <input type="text" id="lastName" name="Last Name" placeholder="e.g. Daniels" required>
                                 <p></p>
                                 <label for="phone">PHONE NUMBER</label>
                                 <input type="text" id="phone" name="Phone Number">
                                 <p></p>
                                 <label for="confirmPassword"> CONFIRM PASSWORD </label>
-                                <input type="password" id="confirmPassword" name="Confirm Password" required>
+                                <input type="password" id="confirmPassword" name="Confirm Password" onChange="onChange()" required>
 
                             </div>
 
@@ -68,14 +69,25 @@
                 </div>
 
                 <div class="blk3">
-                    <button type="submit">Create Account</button>
+                    <button type="submit" form="signUpForm"> <strong>Create Account </strong> </button>
                     <div class="login">
-                        Already have an account? <span> <a id="loginMain"> Log in</a> </span>
+                        Already have an account? <span> <a href="#" target="_blank" id="loginMain" style="color: #596d48;"> Log in</a> </span>
                     </div>
                 </div>
             </div>
 
         </div>
+        <script>
+            function onChange() {
+                const password = document.querySelector('input[id=password]');
+                const confirm = document.querySelector('input[id=confirmPassword]');
+                if (confirm.value === password.value) {
+                    confirm.setCustomValidity('');
+                } else {
+                    confirm.setCustomValidity('Passwords do not match');
+                }
+            }
+        </script>
         
     </body>
 </html>
